@@ -1,0 +1,12 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("PROGRAM TO PRINT MULTIPLICATION TABLE");
+      Scanner input= new Scanner(System.in);
+      int a = input.nextInt();
+      for(int count=1; count != 11; count++){
+        System.out.println( a + " * " + count + " = " + a*count);
+      }
+    }
+}
