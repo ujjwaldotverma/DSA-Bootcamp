@@ -1,0 +1,70 @@
+TO CHECK IF A NUMBER IF ARMSTRONG OR NOT
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Armstrong Numbers");
+      Scanner in = new Scanner(System.in);
+      int n = in.nextInt();
+      System.out.println(isarmstrong(n));
+    }
+    static boolean isarmstrong(int n){
+        int org = n;
+        int sum = 0;
+        while (n>0) {
+          int rem = n % 10;
+          n= n / 10;
+          sum = sum + rem*rem*rem;
+        }
+        if (sum==org) {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+      }
+
+TO PRINT ALL 3 DIGIT ARMSTRONG NUMBERS
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println("Armstrong Numbers");
+      
+      
+      for (int i = 100; i < 1000; i++) {
+        if (isarmstrong(i)){
+          System.out.println(i+ " ");
+        }
+        
+      }
+    }
+    static boolean isarmstrong(int n){
+        int org = n;
+        int sum = 0;
+        while (n>0) {
+          int rem = n % 10;
+          n= n / 10;
+          sum = sum + rem*rem*rem;
+        }
+        if (sum==org) {
+          return true;
+        }
+        else {
+          return false;
+        }
+
+      }
+      
+      
+      
+      }
+
+
+      
+      
+      
+
