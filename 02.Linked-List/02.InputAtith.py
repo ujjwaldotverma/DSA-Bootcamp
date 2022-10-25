@@ -31,8 +31,8 @@ def length(head):                         #fn to find length of the LL
         head = head.next
     return count
 
-def insertAti(head,i,data):               #fn to input at i
-    if i<0 or i>length(head):
+def insertAti(head,i,data):               #fn to input at i iteratively
+    if i<0 or i>length(head):             #TC = O(n)
         return head
         
     count = 0
@@ -51,6 +51,22 @@ def insertAti(head,i,data):               #fn to input at i
         head = newNode
     newNode.next = curr
     
+    return head
+
+def insertAtiR(head,i,data):                      #fn to insert at i Recursively
+    if i < 0:                                     #TC = O(i)
+        return head
+        
+    if i == 0:
+        newNode = Node(data)
+        newNode.next = head
+        return newNode
+    
+    if head is None:
+        return None
+    
+    smallHead = insertAtiR(head.next,i-1,data)
+    head.next = smallHead
     return head
     
 head = takeInput()
