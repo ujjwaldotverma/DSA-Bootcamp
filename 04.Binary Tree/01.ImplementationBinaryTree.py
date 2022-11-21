@@ -24,8 +24,15 @@ def printTreeDetailed(root):                    #print but better
     printTreeDetailed(root.right)
     
 def treeInput():                            #ask user for input
-    rootData = input()
-    root = BT
+    rootData = int(input())
+    if rootData == -1:
+        return None
+    root = BTnode(rootData)
+    leftTree = treeInput()
+    rightTree = treeInput()
+    root.left = leftTree
+    root.right = rightTree
+    return root
     
 btn1=BTnode(1)                                 #creating nodes
 btn2=BTnode(2)
@@ -36,4 +43,5 @@ btn1.left=btn2                                  #connecting edges
 btn1.right=btn3
 btn2.left=btn4
 btn2.right=btn5
-printTreeDetailed(btn1)                         #function call
+root = treeInput()
+printTreeDetailed(root)                         #function call
